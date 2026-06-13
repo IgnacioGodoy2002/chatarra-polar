@@ -214,15 +214,6 @@ Se guarda el siguiente estado:
 
 ---
 
-## Capturas
-
-![Exploración](docs/exploracion.png)
-![Interior de la base](docs/interior-base.png)
-![Mesa de mejoras](docs/mesa-mejoras.png)
-![Antena](docs/antena.png)
-
----
-
 ## Estado del proyecto
 
 `Versión actual: prototipo jugable / demo en desarrollo.`
@@ -233,7 +224,7 @@ Se guarda el siguiente estado:
 
 **Ignacio Gabriel Godoy**
 
-- Correo: [nachogodoy04@gmail.com](mailto:nachogodoy04@gmail.com)
-- GitHub: *(próximamente)*
-- LinkedIn: *(próximamente)*
-- Demo descargable: *(próximamente)*
+- Correo: nachogodoy04@gmail.com
+- GitHub: https://github.com/IgnacioGodoy2002
+- LinkedIn: https://www.linkedin.com/in/ignacio-gabriel-godoy-351770273/
+- Demo descargable: https://github.com/IgnacioGodoy2002/chatarra-polar/releases/tag/v0.1.0-demo
