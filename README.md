@@ -227,4 +227,4 @@ Se guarda el siguiente estado:
 - Correo: nachogodoy04@gmail.com
 - GitHub: https://github.com/IgnacioGodoy2002
 - LinkedIn: https://www.linkedin.com/in/ignacio-gabriel-godoy-351770273/
-- Demo descargable: https://github.com/IgnacioGodoy2002/chatarra-polar/releases/tag/v0.1.0-demo
+- Demo descargable: https://github.com/IgnacioGodoy2002/chatarra-polar/releases/tag/v0.1.1-demo
