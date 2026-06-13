@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://br44oj8o6cwke"]
+
+[ext_resource type="Script" uid="uid://cknid71qgincs" path="res://base.gd" id="1_1w1q6"]
+[ext_resource type="Texture2D" uid="uid://ciogwy8dm1iyw" path="res://icon.svg" id="2_6qyon"]
+[ext_resource type="Texture2D" uid="uid://h4qoli0ycwm2" path="res://Sprite/Base/base_1_simple.png" id="3_6qyon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdayy"]
+
+[node name="Base" type="Area2D" unique_id=6983987]
+script = ExtResource("1_1w1q6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=177370065]
+visible = false
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_6qyon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=461319634]
+shape = SubResource("RectangleShape2D_jdayy")
+
+[node name="BaseVisual" type="Sprite2D" parent="." unique_id=1460168837]
+position = Vector2(0, -40)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_6qyon")

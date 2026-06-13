@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dep1yln8x21m7"]
+
+[ext_resource type="Script" uid="uid://dl7jjwaidkqj6" path="res://Scenes/scrap.gd" id="1_nkhrt"]
+[ext_resource type="Texture2D" uid="uid://5exowi8irguj" path="res://Sprite/Items/scrap.png" id="2_nkhrt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_itaa7"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nkhrt"]
+
+[node name="Scrap" type="Area2D" unique_id=1753184420]
+script = ExtResource("1_nkhrt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=861158033]
+visible = false
+modulate = Color(0.7647059, 0.23137255, 0.011764706, 1)
+position = Vector2(0.12, 0.15)
+scale = Vector2(0.12, 0.12)
+texture = SubResource("CompressedTexture2D_itaa7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2049127696]
+shape = SubResource("CircleShape2D_nkhrt")
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=215656319]
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("2_nkhrt")

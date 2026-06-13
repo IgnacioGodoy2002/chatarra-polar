@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://barg0kqgw7gn1"]
+
+[ext_resource type="Script" uid="uid://1gfjyjltsirv" path="res://Scenes/special_part.gd" id="1_ame3i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3gve"]
+
+[node name="SpecialPart" type="Area2D" unique_id=1467306247]
+script = ExtResource("1_ame3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1638330602]
+shape = SubResource("CircleShape2D_n3gve")
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=1717539896]

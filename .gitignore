@@ -1,0 +1,32 @@
+# Godot
+.godot/
+.import/
+/android/
+
+# Credenciales de exportación
+export_credentials.cfg
+
+# Builds y exportaciones
+build/
+builds/
+export/
+exports/
+dist/
+
+# Ejecutables y paquetes
+*.exe
+*.pck
+*.zip
+
+# Videos pesados
+*.mp4
+*.mov
+*.avi
+
+# Logs y temporales
+*.log
+*.tmp
+
+# Archivos del sistema
+Thumbs.db
+.DS_Store

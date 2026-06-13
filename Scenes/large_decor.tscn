@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cwt7q400g1sn6"]
+
+[ext_resource type="Script" uid="uid://d0nqq2uxipg84" path="res://Scenes/large_decor.gd" id="1_6hcvr"]
+
+[node name="LargeDecor" type="Node2D" unique_id=2094552161]
+script = ExtResource("1_6hcvr")

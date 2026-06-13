@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bte3fqdviu3ib"]
+
+[ext_resource type="Script" uid="uid://clgyx5q8jfvua" path="res://Scenes/antenna.gd" id="1_ahvh1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxmpv"]
+
+[node name="Antenna" type="Area2D" unique_id=344412748]
+script = ExtResource("1_ahvh1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=366256522]
+shape = SubResource("CircleShape2D_mxmpv")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bg4huwh3jko34"]
+
+[ext_resource type="Script" uid="uid://dyq50xvtx8phf" path="res://decor_sign.gd" id="1_jqgsr"]
+
+[node name="DecorSign" type="Node2D" unique_id=1429136082]
+script = ExtResource("1_jqgsr")

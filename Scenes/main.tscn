@@ -1,0 +1,299 @@
+[gd_scene format=3 uid="uid://3ij716gmvn14"]
+
+[ext_resource type="Script" uid="uid://ciep2dx0xd57f" path="res://Scenes/main.gd" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://buq5pw3i0cio3" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://bgy1gnlpqy6in" path="res://Scenes/ground.gd" id="2_21xkr"]
+[ext_resource type="Script" uid="uid://iuqdwsflsbv0" path="res://Scenes/hotbar.gd" id="4_344ge"]
+[ext_resource type="PackedScene" uid="uid://br44oj8o6cwke" path="res://Scenes/base.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://ruiqev5va0bv" path="res://Scenes/obstacle.tscn" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://bakk8t485awd5" path="res://Scenes/top_hud.gd" id="5_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://cmwliosv17npl" path="res://Scenes/enemy_drone.tscn" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://be0gevo6bir3u" path="res://Scenes/pause_menu.gd" id="6_hptm8"]
+[ext_resource type="PackedScene" uid="uid://bg4huwh3jko34" path="res://decor_sign.tscn" id="7_6bp64"]
+[ext_resource type="Script" uid="uid://dc80rnwt8bsfk" path="res://Scenes/deco_complete_overlay.gd" id="7_jkdf5"]
+[ext_resource type="Script" uid="uid://s0jqr2s8qcmo" path="res://Scenes/mini_map_hub.gd" id="8_wsu2k"]
+[ext_resource type="Script" uid="uid://vrcgghdufwya" path="res://Scenes/story_intro.gd" id="9_k12tt"]
+[ext_resource type="Script" uid="uid://b60ohhw4jj07v" path="res://Scenes/mission_toast.gd" id="10_h1bgf"]
+[ext_resource type="Script" uid="uid://chfv7ulyxhunc" path="res://Scenes/weather_fx.gd" id="11_b3802"]
+[ext_resource type="Script" uid="uid://enxqtlokutvt" path="res://Scenes/sound_manager.gd" id="11_d1ilt"]
+[ext_resource type="Script" uid="uid://dlphsdnjmkdni" path="res://Scenes/save_manager.gd" id="12_6iyac"]
+[ext_resource type="Script" uid="uid://3g53kqvipl64" path="res://Scenes/base_upgrade_panel.gd" id="12_pdsj5"]
+[ext_resource type="Script" uid="uid://33k5eqmnc2ut" path="res://Scenes/damage_overlay.gd" id="13_ee4r6"]
+[ext_resource type="PackedScene" uid="uid://bte3fqdviu3ib" path="res://Scenes/antenna.tscn" id="13_fdnlq"]
+[ext_resource type="Script" uid="uid://c04jg0ltf6dc5" path="res://Scenes/objective_compass.gd" id="14_gt3je"]
+[ext_resource type="Script" uid="uid://euk6ipcusek5" path="res://Scenes/danger_warning.gd" id="15_3pmx8"]
+[ext_resource type="Script" uid="uid://dpa281xo75kmc" path="res://Scenes/heat_gauge.gd" id="16_u50mg"]
+[ext_resource type="Script" uid="uid://ctuh5hlfi3xvv" path="res://Scenes/side_mission_system.gd" id="17_cbgmd"]
+[ext_resource type="Script" uid="uid://dy2fivjbaap35" path="res://Scenes/tito_radio.gd" id="18_1w6v2"]
+[ext_resource type="PackedScene" uid="uid://cwt7q400g1sn6" path="res://Scenes/large_decor.tscn" id="19_fevyy"]
+[ext_resource type="Script" uid="uid://5i3ei78symxw" path="res://Scenes/magnetic_gloves_system.gd" id="19_ueoa1"]
+[ext_resource type="Script" uid="uid://bscrr8qryiwq6" path="res://Scenes/thermal_insulation_system.gd" id="20_6vcvc"]
+[ext_resource type="Script" uid="uid://b1608ymb3oi0m" path="res://Scenes/zone_system.gd" id="20_hibaj"]
+[ext_resource type="Script" uid="uid://b1beiyij14p56" path="res://Scenes/parts_radar_system.gd" id="21_7k868"]
+[ext_resource type="Script" uid="uid://csfhnynjmwf5i" path="res://Scenes/crafting_workshop_system.gd" id="22_hpc6h"]
+[ext_resource type="Script" uid="uid://dcbt558a2t4uc" path="res://Scenes/hud_organizer.gd" id="23_kltya"]
+[ext_resource type="Script" uid="uid://cjtstipkfuv1a" path="res://Scenes/base_interior.gd" id="33_e08e2"]
+[ext_resource type="Texture2D" uid="uid://bpja3x61h3ekq" path="res://Sprite/BaseInterior/interior_simple.png" id="34_neg2b"]
+[ext_resource type="Script" uid="uid://byx3yl0h526x4" path="res://Scenes/upgrade_area.gd" id="35_r33sp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kry3j"]
+size = Vector2(24000, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xkr"]
+size = Vector2(2400, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bp64"]
+size = Vector2(40, 1400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
+size = Vector2(40, 1400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r33sp"]
+size = Vector2(180, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdf80"]
+size = Vector2(600, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwpg7"]
+size = Vector2(600, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2e45"]
+size = Vector2(40, 420)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_536cc"]
+size = Vector2(40, 420)
+
+[node name="Main" type="Node2D" unique_id=1084581447]
+script = ExtResource("1_8gbba")
+
+[node name="Ground" type="ColorRect" parent="." unique_id=1223910647]
+custom_minimum_size = Vector2(-1400, -900)
+offset_right = 3000.0
+offset_bottom = 2000.0
+color = Color(0.66392404, 0.93558925, 0.9821158, 1)
+script = ExtResource("2_21xkr")
+
+[node name="Player" parent="." unique_id=1464802404 instance=ExtResource("1_jjgbg")]
+position = Vector2(500, 300)
+
+[node name="MapLimits" type="StaticBody2D" parent="." unique_id=766438600]
+
+[node name="TopLimit" type="CollisionShape2D" parent="MapLimits" unique_id=569315190]
+position = Vector2(100, -700)
+shape = SubResource("RectangleShape2D_kry3j")
+
+[node name="BottonLimit" type="CollisionShape2D" parent="MapLimits" unique_id=1244246274]
+position = Vector2(100, 700)
+shape = SubResource("RectangleShape2D_21xkr")
+
+[node name="LeftLimit" type="CollisionShape2D" parent="MapLimits" unique_id=1530294252]
+position = Vector2(-1000, 0)
+shape = SubResource("RectangleShape2D_6bp64")
+
+[node name="RightLimit" type="CollisionShape2D" parent="MapLimits" unique_id=1361497555]
+position = Vector2(1200, 0)
+shape = SubResource("RectangleShape2D_344ge")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1988054891]
+
+[node name="ScrapLabel" type="Label" parent="CanvasLayer" unique_id=497919754]
+custom_minimum_size = Vector2(20, 20)
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Chatarra: 0"
+
+[node name="BaseLabel" type="Label" parent="CanvasLayer" unique_id=525580965]
+custom_minimum_size = Vector2(20, 45)
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Base: 0"
+
+[node name="HeatLabel" type="Label" parent="CanvasLayer" unique_id=1599050695]
+custom_minimum_size = Vector2(20, 70)
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Calor: 100"
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer" unique_id=131791768]
+custom_minimum_size = Vector2(20, 100)
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="StormOverlay" type="ColorRect" parent="CanvasLayer" unique_id=980061886]
+visible = false
+offset_right = 2000.0
+offset_bottom = 1200.0
+
+[node name="Hotbar" type="Node2D" parent="CanvasLayer" unique_id=1620124180]
+script = ExtResource("4_344ge")
+
+[node name="TopHud" type="Node2D" parent="CanvasLayer" unique_id=326647704]
+script = ExtResource("5_ynf5e")
+
+[node name="PauseMenu" type="Node2D" parent="CanvasLayer" unique_id=2027407309]
+script = ExtResource("6_hptm8")
+
+[node name="DemoCompleteOverlay" type="Node2D" parent="CanvasLayer" unique_id=1298973012]
+script = ExtResource("7_jkdf5")
+
+[node name="MiniMapHub" type="Node2D" parent="CanvasLayer" unique_id=1712358485]
+script = ExtResource("8_wsu2k")
+
+[node name="StoryIntro" type="Node2D" parent="CanvasLayer" unique_id=1267727021]
+script = ExtResource("9_k12tt")
+
+[node name="MissionToast" type="Node2D" parent="CanvasLayer" unique_id=692318479]
+script = ExtResource("10_h1bgf")
+
+[node name="WeatherFX" type="Node2D" parent="CanvasLayer" unique_id=1737589977]
+script = ExtResource("11_b3802")
+
+[node name="ZonaLabel" type="Label" parent="CanvasLayer" unique_id=223910394]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BaseUpgradePanel" type="Node2D" parent="CanvasLayer" unique_id=781317351]
+script = ExtResource("12_pdsj5")
+
+[node name="DamageOverlay" type="Node2D" parent="CanvasLayer" unique_id=1502682339]
+script = ExtResource("13_ee4r6")
+
+[node name="ObjectiveCompass" type="Node2D" parent="CanvasLayer" unique_id=1981956763]
+script = ExtResource("14_gt3je")
+
+[node name="DangerWarning" type="Node2D" parent="CanvasLayer" unique_id=618383815]
+script = ExtResource("15_3pmx8")
+
+[node name="HeatGauge" type="Node2D" parent="CanvasLayer" unique_id=1284862207]
+script = ExtResource("16_u50mg")
+
+[node name="SideMissionSystem" type="Node2D" parent="CanvasLayer" unique_id=22577365]
+script = ExtResource("17_cbgmd")
+
+[node name="TitoRadio" type="Node2D" parent="CanvasLayer" unique_id=967115210]
+script = ExtResource("18_1w6v2")
+
+[node name="MagneticGlovesSystem" type="Node2D" parent="CanvasLayer" unique_id=28961571]
+script = ExtResource("19_ueoa1")
+
+[node name="ThermalInsulationSystem" type="Node2D" parent="CanvasLayer" unique_id=2019834704]
+script = ExtResource("20_6vcvc")
+
+[node name="PartsRadarSystem" type="Node2D" parent="CanvasLayer" unique_id=213397534]
+script = ExtResource("21_7k868")
+
+[node name="CraftingWorkshopSystem" type="Node2D" parent="CanvasLayer" unique_id=1149244532]
+script = ExtResource("22_hpc6h")
+
+[node name="HudOrganizer" type="Node2D" parent="CanvasLayer" unique_id=1092492130]
+script = ExtResource("23_kltya")
+
+[node name="Base" parent="." unique_id=6983987 instance=ExtResource("4_jjvhh")]
+
+[node name="Obstacle" parent="." unique_id=981076352 instance=ExtResource("5_kry3j")]
+position = Vector2(400, 300)
+
+[node name="Obstacle2" parent="." unique_id=186960546 instance=ExtResource("5_kry3j")]
+position = Vector2(500, 300)
+
+[node name="Obstacle3" parent="." unique_id=36617176 instance=ExtResource("5_kry3j")]
+position = Vector2(600, 300)
+
+[node name="Obstacle4" parent="." unique_id=680459394 instance=ExtResource("5_kry3j")]
+position = Vector2(500, 400)
+
+[node name="EnemyDrone" parent="." unique_id=605105401 instance=ExtResource("6_21xkr")]
+position = Vector2(700, 450)
+
+[node name="ScrapContainer" type="Node2D" parent="." unique_id=1179180188]
+
+[node name="EnemyContainer" type="Node2D" parent="." unique_id=476272100]
+
+[node name="DecorSign" parent="." unique_id=1429136082 instance=ExtResource("7_6bp64")]
+position = Vector2(-650, 350)
+
+[node name="DecorSign2" parent="." unique_id=1704277994 instance=ExtResource("7_6bp64")]
+position = Vector2(-150, 250)
+sign_text = "BASE"
+
+[node name="DecorSign3" parent="." unique_id=10992451 instance=ExtResource("7_6bp64")]
+position = Vector2(650, 250)
+sign_text = "CHATARRA ÚTIL ->"
+
+[node name="DecorSign4" parent="." unique_id=818971421 instance=ExtResource("7_6bp64")]
+position = Vector2(850, -200)
+sign_text = "PELIGRO DRONES"
+
+[node name="SoundManager" type="Node" parent="." unique_id=372848724]
+script = ExtResource("11_d1ilt")
+
+[node name="SaveManager" type="Node" parent="." unique_id=1988473932]
+script = ExtResource("12_6iyac")
+
+[node name="Antenna" parent="." unique_id=344412748 instance=ExtResource("13_fdnlq")]
+position = Vector2(950, -450)
+
+[node name="LargeDecor" parent="." unique_id=2094552161 instance=ExtResource("19_fevyy")]
+position = Vector2(850, -520)
+prop_scale = 1.1
+
+[node name="LargeDecor2" parent="." unique_id=1290480822 instance=ExtResource("19_fevyy")]
+position = Vector2(-650, -420)
+prop_type = "pipes"
+
+[node name="LargeDecor3" parent="." unique_id=1778808204 instance=ExtResource("19_fevyy")]
+position = Vector2(980, 560)
+prop_type = "machine"
+
+[node name="LargeDecor4" parent="." unique_id=1926770051 instance=ExtResource("19_fevyy")]
+position = Vector2(-720, 520)
+prop_type = "scrap_mountain"
+prop_scale = 1.1
+
+[node name="ZoneSystem" type="Node2D" parent="." unique_id=1045953465]
+script = ExtResource("20_hibaj")
+
+[node name="BaseInterior" type="Node2D" parent="." unique_id=1936828747]
+position = Vector2(5000, 0)
+script = ExtResource("33_e08e2")
+
+[node name="SpawnPoint" type="Marker2D" parent="BaseInterior" unique_id=1584495411]
+position = Vector2(0, 80)
+
+[node name="ExitPoint" type="Marker2D" parent="BaseInterior" unique_id=1994913964]
+position = Vector2(0, 170)
+
+[node name="InteriorVisual" type="Sprite2D" parent="BaseInterior" unique_id=523115443]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("34_neg2b")
+
+[node name="UpgradeArea" type="Area2D" parent="BaseInterior" unique_id=101405830]
+position = Vector2(240, -40)
+script = ExtResource("35_r33sp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseInterior/UpgradeArea" unique_id=1297793631]
+position = Vector2(-120, -80)
+shape = SubResource("RectangleShape2D_r33sp")
+
+[node name="InteriorWalls" type="StaticBody2D" parent="BaseInterior" unique_id=615842823]
+
+[node name="WallTop" type="CollisionShape2D" parent="BaseInterior/InteriorWalls" unique_id=852873389]
+position = Vector2(0, -190)
+shape = SubResource("RectangleShape2D_hdf80")
+
+[node name="WallBottom" type="CollisionShape2D" parent="BaseInterior/InteriorWalls" unique_id=865246393]
+position = Vector2(0, 210)
+shape = SubResource("RectangleShape2D_jwpg7")
+
+[node name="WallLeft" type="CollisionShape2D" parent="BaseInterior/InteriorWalls" unique_id=1538474947]
+position = Vector2(-300, 0)
+shape = SubResource("RectangleShape2D_k2e45")
+
+[node name="WallRight" type="CollisionShape2D" parent="BaseInterior/InteriorWalls" unique_id=384622865]
+position = Vector2(300, 0)
+shape = SubResource("RectangleShape2D_536cc")
+
+[node name="InteriorBackground" type="Polygon2D" parent="BaseInterior" unique_id=1914080498]
+z_index = -100
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-2000, -1200, 2000, -1200, 2000, 1200, -2000, 1200)
