@@ -60,7 +60,8 @@ var max_special_parts_on_map: int = 6
 var special_part_respawn_delay: float = 10.0
 
 var max_enemies_on_map: int = 4
-var enemy_respawn_delay: float = 6.0
+var enemy_respawn_delay_min: float = 8.0
+var enemy_respawn_delay_max: float = 15.0
 
 var danger_enemy_timer: float = 0.0
 var danger_enemy_interval: float = 7.0
@@ -373,18 +374,27 @@ func spawn_initial_enemies() -> void:
 		spawn_enemy_at_random_position()
 
 
-func spawn_enemy_at_random_position() -> void:
+func spawn_enemy_at_random_position() -> bool:
 	if enemy_container == null:
-		return
+		return false
 
 	if enemy_container.get_child_count() >= max_total_enemies:
-		return
+		return false
+
+	var player_node: Node2D = get_node_or_null("Player") as Node2D
+
+	var valid_positions: Array[Vector2] = []
+	for pos in enemy_spawn_positions:
+		if player_node == null or pos.distance_to(player_node.global_position) >= 350.0:
+			valid_positions.append(pos)
+
+	if valid_positions.is_empty():
+		return false
 
 	var enemy_instance: Area2D = ENEMY_SCENE.instantiate() as Area2D
-	var random_position: Vector2 = enemy_spawn_positions.pick_random()
-
-	enemy_instance.global_position = random_position
+	enemy_instance.global_position = valid_positions.pick_random()
 	enemy_container.add_child(enemy_instance)
+	return true
 
 
 func spawn_enemy_in_danger_zone() -> void:
@@ -404,12 +414,17 @@ func spawn_enemy_in_danger_zone() -> void:
 
 
 func on_enemy_removed(_position: Vector2) -> void:
-	await get_tree().create_timer(enemy_respawn_delay).timeout
+	var delay: float = randf_range(enemy_respawn_delay_min, enemy_respawn_delay_max)
+	await get_tree().create_timer(delay).timeout
 
 	if is_frozen or demo_completed:
 		return
 
-	spawn_enemy_at_random_position()
+	if not spawn_enemy_at_random_position():
+		await get_tree().create_timer(4.0).timeout
+		if is_frozen or demo_completed:
+			return
+		spawn_enemy_at_random_position()
 
 
 func restart_from_zero_after_death() -> void:
