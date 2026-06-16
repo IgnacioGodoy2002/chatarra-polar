@@ -2,6 +2,7 @@ extends Area2D
 
 var player_inside: bool = false
 var interact_cooldown: float = 0.0
+var feedback_timer: float = 0.0
 
 
 func _ready() -> void:
@@ -18,6 +19,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if interact_cooldown > 0.0:
 		interact_cooldown -= delta
+	if feedback_timer > 0.0:
+		feedback_timer -= delta
 
 	if not player_inside:
 		return
@@ -29,7 +32,8 @@ func _process(delta: float) -> void:
 
 		if status_value != null and status_value is Label:
 			var status_label: Label = status_value as Label
-			status_label.text = "Presioná E para abrir la mesa"
+			if feedback_timer <= 0.0:
+				status_label.text = "[E] Usar mesa de trabajo   [F] Guardar materiales"
 
 	if interact_cooldown > 0.0:
 		return
@@ -39,6 +43,21 @@ func _process(delta: float) -> void:
 
 		if main_scene != null and main_scene.has_method("open_workshop_panels"):
 			main_scene.open_workshop_panels()
+
+	elif Input.is_action_just_pressed("deposit_materials"):
+		interact_cooldown = 0.35
+		feedback_timer = 2.0
+		if main_scene != null:
+			var sc_val = main_scene.get("scrap_count")
+			var status_value = main_scene.get("status_label")
+			if status_value != null and status_value is Label:
+				var status_label: Label = status_value as Label
+				if sc_val != null and int(sc_val) > 0:
+					if main_scene.has_method("deposit_scrap"):
+						main_scene.call("deposit_scrap")
+					status_label.text = "Materiales guardados en la base"
+				else:
+					status_label.text = "No tenés materiales para guardar"
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -56,7 +75,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 		if status_value != null and status_value is Label:
 			var status_label: Label = status_value as Label
-			status_label.text = "Presioná E para abrir la mesa"
+			status_label.text = "[E] Usar mesa de trabajo   [F] Guardar materiales"
 
 
 func _on_body_exited(body: Node2D) -> void:

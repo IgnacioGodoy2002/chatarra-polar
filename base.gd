@@ -34,7 +34,6 @@ func _process(delta: float) -> void:
 	handle_interaction()
 
 	if player_near_base and not player_inside_house:
-		deposit_materials_if_needed()
 		show_enter_prompt()
 
 	if player_inside_house:
@@ -254,7 +253,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 	if main_scene != null:
 		main_scene.set("is_in_base", true)
-		deposit_materials_if_needed()
 		set_status_text(main_scene, "E = entrar a la base")
 
 
