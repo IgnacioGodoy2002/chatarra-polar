@@ -3,9 +3,23 @@
 [ext_resource type="Script" uid="uid://clgyx5q8jfvua" path="res://Scenes/antenna.gd" id="1_ahvh1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxmpv"]
+radius = 110.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_antbase"]
+size = Vector2(175, 45)
 
 [node name="Antenna" type="Area2D" unique_id=344412748]
 script = ExtResource("1_ahvh1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=366256522]
 shape = SubResource("CircleShape2D_mxmpv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=287654321]
+scale = Vector2(1.15, 1.15)
+offset = Vector2(0, -130)
+
+[node name="BaseCollision" type="StaticBody2D" parent="." unique_id=481637421]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseCollision" unique_id=612857934]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_antbase")
