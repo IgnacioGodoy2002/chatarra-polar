@@ -60,8 +60,8 @@ var max_special_parts_on_map: int = 6
 var special_part_respawn_delay: float = 10.0
 
 var max_enemies_on_map: int = 4
-var enemy_respawn_delay_min: float = 8.0
-var enemy_respawn_delay_max: float = 15.0
+var enemy_respawn_delay_min: float = 4.0
+var enemy_respawn_delay_max: float = 5.0
 
 var danger_enemy_timer: float = 0.0
 var danger_enemy_interval: float = 7.0
@@ -421,7 +421,7 @@ func on_enemy_removed(_position: Vector2) -> void:
 		return
 
 	if not spawn_enemy_at_random_position():
-		await get_tree().create_timer(4.0).timeout
+		await get_tree().create_timer(2.0).timeout
 		if is_frozen or demo_completed:
 			return
 		spawn_enemy_at_random_position()
