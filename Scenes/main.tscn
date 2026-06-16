@@ -26,7 +26,6 @@
 [ext_resource type="Script" uid="uid://ctuh5hlfi3xvv" path="res://Scenes/side_mission_system.gd" id="17_cbgmd"]
 [ext_resource type="Script" uid="uid://dy2fivjbaap35" path="res://Scenes/tito_radio.gd" id="18_1w6v2"]
 [ext_resource type="PackedScene" uid="uid://cwt7q400g1sn6" path="res://Scenes/large_decor.tscn" id="19_fevyy"]
-[ext_resource type="Script" uid="uid://5i3ei78symxw" path="res://Scenes/magnetic_gloves_system.gd" id="19_ueoa1"]
 [ext_resource type="Script" uid="uid://bscrr8qryiwq6" path="res://Scenes/thermal_insulation_system.gd" id="20_6vcvc"]
 [ext_resource type="Script" uid="uid://b1608ymb3oi0m" path="res://Scenes/zone_system.gd" id="20_hibaj"]
 [ext_resource type="Script" uid="uid://b1beiyij14p56" path="res://Scenes/parts_radar_system.gd" id="21_7k868"]
@@ -173,9 +172,6 @@ script = ExtResource("17_cbgmd")
 
 [node name="TitoRadio" type="Node2D" parent="CanvasLayer" unique_id=967115210]
 script = ExtResource("18_1w6v2")
-
-[node name="MagneticGlovesSystem" type="Node2D" parent="CanvasLayer" unique_id=28961571]
-script = ExtResource("19_ueoa1")
 
 [node name="ThermalInsulationSystem" type="Node2D" parent="CanvasLayer" unique_id=2019834704]
 script = ExtResource("20_6vcvc")

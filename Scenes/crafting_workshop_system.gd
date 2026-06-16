@@ -304,6 +304,11 @@ func attract_scrap(delta: float) -> void:
 	if main_scene == null:
 		return
 
+	var scrap_count: int = int(main_scene.get("scrap_count") if main_scene.get("scrap_count") != null else 0)
+	var max_scrap: int = int(main_scene.get("max_scrap") if main_scene.get("max_scrap") != null else 5)
+	if scrap_count >= max_scrap:
+		return
+
 	var player: Node2D = main_scene.get_node_or_null("Player") as Node2D
 	var scrap_container: Node = main_scene.get_node_or_null("ScrapContainer")
 
@@ -314,6 +319,11 @@ func attract_scrap(delta: float) -> void:
 		var scrap_node: Node2D = child as Node2D
 
 		if scrap_node == null:
+			continue
+
+		var is_blocked: bool = bool(scrap_node.get("magnet_blocked") if scrap_node.get("magnet_blocked") != null else false)
+		if is_blocked:
+			scrap_node.set("magnet_blocked", false)
 			continue
 
 		var distance: float = scrap_node.global_position.distance_to(player.global_position)

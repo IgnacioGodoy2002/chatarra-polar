@@ -9,6 +9,7 @@ extends Area2D
 var float_time: float = 0.0
 var base_visual_position: Vector2 = Vector2.ZERO
 var collected: bool = false
+var magnet_blocked: bool = false
 
 
 func _ready() -> void:
@@ -87,6 +88,14 @@ func collect() -> void:
 		return
 
 	var main_scene: Node = get_tree().current_scene
+
+	if magnet_blocked:
+		var sc_val = main_scene.get("scrap_count") if main_scene != null else null
+		var ms_val = main_scene.get("max_scrap") if main_scene != null else null
+		if sc_val == null or ms_val == null or int(sc_val) >= int(ms_val):
+			return
+		magnet_blocked = false
+
 	var success: bool = false
 
 	if main_scene != null:
@@ -105,3 +114,11 @@ func collect() -> void:
 	if success:
 		collected = true
 		queue_free()
+	elif main_scene != null and not magnet_blocked:
+		magnet_blocked = true
+		var player: Node2D = main_scene.get_node_or_null("Player") as Node2D
+		if player != null:
+			var away: Vector2 = global_position - player.global_position
+			if away.length() < 0.1:
+				away = Vector2.RIGHT
+			global_position = player.global_position + away.normalized() * 55.0
