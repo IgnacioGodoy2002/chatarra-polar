@@ -22,6 +22,7 @@ func _ready() -> void:
 	setup_visual_if_needed()
 	setup_interaction_area_if_needed()
 	setup_house_collision_if_needed()
+	setup_door_area_if_needed()
 	connect_signals_if_needed()
 	update_base_visual()
 
@@ -47,7 +48,7 @@ func setup_visual_if_needed() -> void:
 		add_child(base_visual)
 
 	base_visual.centered = true
-	base_visual.z_index = 1
+	base_visual.z_index = 0
 	base_visual.scale = Vector2(0.95, 0.95)
 	base_visual.position = Vector2(0, -55)
 
@@ -99,6 +100,38 @@ func setup_house_collision_if_needed() -> void:
 
 	wall_body.position = Vector2(0, -55)
 	wall_shape.position = Vector2.ZERO
+
+
+func setup_door_area_if_needed() -> void:
+	var door_area: Area2D = get_node_or_null("DoorInteraction") as Area2D
+
+	if door_area == null:
+		door_area = Area2D.new()
+		door_area.name = "DoorInteraction"
+		add_child(door_area)
+
+	var door_shape: CollisionShape2D = door_area.get_node_or_null("CollisionShape2D") as CollisionShape2D
+
+	if door_shape == null:
+		door_shape = CollisionShape2D.new()
+		door_shape.name = "CollisionShape2D"
+		door_area.add_child(door_shape)
+
+	if door_shape.shape == null or not door_shape.shape is RectangleShape2D:
+		door_shape.shape = RectangleShape2D.new()
+
+	var door_rect: RectangleShape2D = door_shape.shape as RectangleShape2D
+	door_rect.size = Vector2(120, 80)
+	door_shape.position = Vector2(0, 75)
+
+	door_area.monitoring = true
+	door_area.monitorable = true
+
+	if not door_area.body_entered.is_connected(_on_door_body_entered):
+		door_area.body_entered.connect(_on_door_body_entered)
+
+	if not door_area.body_exited.is_connected(_on_door_body_exited):
+		door_area.body_exited.connect(_on_door_body_exited)
 
 
 func connect_signals_if_needed() -> void:
@@ -222,7 +255,7 @@ func show_enter_prompt() -> void:
 	if main_scene == null:
 		return
 
-	set_status_text(main_scene, "E = entrar a la base")
+	set_status_text(main_scene, "[E] Entrar a la base")
 
 
 func show_exit_prompt() -> void:
@@ -247,13 +280,11 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	player = body
-	player_near_base = true
 
 	var main_scene: Node = get_tree().current_scene
 
 	if main_scene != null:
 		main_scene.set("is_in_base", true)
-		set_status_text(main_scene, "E = entrar a la base")
 
 
 func _on_body_exited(body: Node2D) -> void:
@@ -365,6 +396,26 @@ func get_bool_from_main(main_scene: Node, property_name: String) -> bool:
 		return false
 
 	return bool(value)
+
+
+func _on_door_body_entered(body: Node2D) -> void:
+	if body.name != "Player" and not body.is_in_group("player"):
+		return
+
+	player = body
+	player_near_base = true
+
+
+func _on_door_body_exited(body: Node2D) -> void:
+	if body.name != "Player" and not body.is_in_group("player"):
+		return
+
+	player_near_base = false
+
+	if not player_inside_house:
+		var main_scene: Node = get_tree().current_scene
+		if main_scene != null:
+			set_status_text(main_scene, "")
 
 
 func set_status_text(main_scene: Node, text: String) -> void:
